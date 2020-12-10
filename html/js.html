@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<script>
+    //var empresa="Gama Academy";
+    //var mensagem="Sejam bem vindos - ";
+    //alert(mensagem+empresa);
+    //var nome = prompt("Olá, seja bem vindo! Informe seu nome:");
+    //alert("Seja bem vindo(a) " + nome);
+    //document.write("Seja bem vindo(a) " + nome);
+
+    /*function mensagem() {
+        alert("Nossa como você é curioso, tenha cuidado!")
+    } */
+
+    function validar() {
+        var nome = formuser.nome.value;
+        var email = formuser.email.value;
+        var senha = formuser.senha.value;
+
+        if (nome == "") {
+            alert("O preenchimento do campo nome é obrigatório!");
+            formuser.nome.focus();
+            return false;
+        }
+
+        if (email == "" || email.indexOf('@') == -1) {
+            alert("O preenchimento do campo e-mail é obrigatório. Digite um e-mail válido.");
+            formuser.email.focus();
+            return false
+        }
+
+        if (senha == "" || senha.length <= 5) {
+            alert("O preenchimento do campo senha é obrigatório com no mínimo 6 dígitos");
+            formuser.senha.focus();
+            return false;
+        }
+
+        alert("Prezado(a) " + nome + "\n enviaremos os portfolios de cursos para o email " + email + ".");
+
+    }
+
+</script>
+
+<body>
+
+    <form id="formuser" method="POST">
+        Nome: <input type="text" name="nome"> <br><br>
+        Email: <input type="text" name="email"> <br><br>
+        Senha: <input type="password" name="senha"> <br><br>
+
+        <input type="submit" onclick="return validar()" value="Enviar">
+    </form>
+
+    <!--<input type="button" onclick="mensagem()" value="Ganhe 1000 reais!">-->
+
+
+</body>
+
+</html>
